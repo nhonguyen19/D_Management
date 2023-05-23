@@ -1,0 +1,10 @@
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/CMakeFiles/INSTALL.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/CMakeFiles/ALL_BUILD.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/CMakeFiles/ZERO_CHECK.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/flutter/CMakeFiles/INSTALL.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/runner/CMakeFiles/devide_manager.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/runner/CMakeFiles/INSTALL.dir
+D:/HK6/Do_An_Tot_Nghiep/D_Management/build/windows/runner/CMakeFiles/ALL_BUILD.dir
