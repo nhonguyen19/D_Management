@@ -1,3 +1,5 @@
+import 'package:devide_manager/object/DonViOject.dart';
+import 'package:devide_manager/provider/api_don_vi.dart';
 import 'package:devide_manager/ui/thiet_bi.dart';
 import 'package:devide_manager/ui/dang_nhap.dart';
 import 'package:devide_manager/ui/don_vi.dart';
@@ -5,6 +7,7 @@ import 'package:devide_manager/widget/widget.dart';
 import 'package:devide_manager/object/TypeOfDeviceObject.dart';
 import 'package:devide_manager/provider/api_Type_Of_Device.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
@@ -90,35 +93,30 @@ class _HomePageState extends State<HomePage> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/background.jpg'),
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fill,
                 ),
               ),
               child: Stack(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 children: [
-                  Positioned(
-                    top: 50,
-                    left: 100,
-                    child: Text(
-                      'Chào mừng đến với',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    bottom: 80,
-                    left: 30,
-                    child: Text(
-                      'Thiết bị CĐKT Cao Thắng',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      return FractionallySizedBox(
+                        widthFactor:
+                            0.8, // Tùy chỉnh độ rộng của FractionallySizedBox theo nhu cầu
+                        child: Text(
+                          'Chào mừng đến với Thiết bị CĐKT Cao Thắng',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 5.0,
+                            height: 1.5,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -148,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                     child: const Text(
                       'Xem tất cả',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 31, 60, 114),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -160,7 +158,9 @@ class _HomePageState extends State<HomePage> {
             SingleChildScrollView(
               child: Row(
                 children: <Widget>[
+                  Image(image: ,)
                   Expanded(
+                    flex: 1,
                     child: SizedBox(
                       height: 200,
                       child: FutureBuilder<List<TypeOfDiviceObject>>(
@@ -171,26 +171,30 @@ class _HomePageState extends State<HomePage> {
                             List<TypeOfDiviceObject> lsTypeOfDevice =
                                 snapshot.data!;
                             return ListView.builder(
-                                scrollDirection: Axis.vertical,
+                                scrollDirection: Axis.horizontal,
                                 shrinkWrap: true,
                                 itemCount: lsTypeOfDevice.length,
                                 itemBuilder: (((context, index) =>
-                                    buildDepartmentItem(
+                                    buildDeviceItem(
                                       context,
                                       'assets/Images_TOD/${lsTypeOfDevice[index].Image}',
                                       lsTypeOfDevice[index]
                                           .Type_Of_Device_Name
                                           .toString(),
                                       '80',
-                                      '60',
-                                      Colors.blue,
+                                      Colors.green,
                                     ))));
                           } else if (snapshot.hasError) {
                             return const Center(
                               child: Text('Hệ thống đang có sự cố!!'),
                             );
                           }
-                          return const CircularProgressIndicator();
+                          return Center(
+                            child: SpinKitChasingDots(
+                              color: Color.fromARGB(255, 31, 60, 114),
+                              size: 50,
+                            ),
+                          );
                         }),
                       ),
                     ),
@@ -222,7 +226,7 @@ class _HomePageState extends State<HomePage> {
                       child: const Text(
                         'Xem tất cả',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Color.fromARGB(255, 31, 60, 114),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -233,65 +237,45 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 16),
             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               child: Row(
-                children: [
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/khoacntt.png',
-                    'Khoa Công nghệ thông tin',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/khoaCK.jpg',
-                    'Khoa Cơ khí',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/khoaCKDL.png',
-                    'Khoa Cơ khí động lực',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/khoaDT.png',
-                    'Khoa Điện - Điện tử',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/khoaNhietLanh.jpg',
-                    'Khoa Nhiệt lạnh',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/bomonKinhte.jpg',
-                    'Khoa Kinh tế',
-                    '80',
-                    '60',
-                    Colors.blue,
-                  ),
-                  //update code tại chỗ này
-                  buildDepartmentItem(
-                    context,
-                    'assets/Logo_Khoa/bomonKinhte.jpg',
-                    'Khoa Kinh tế',
-                    '80',
-                    '60',
-                    Colors.blue,
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: SizedBox(
+                      height: 190,
+                      child: FutureBuilder<List<DonViObject>>(
+                        future: DonViProvider.fetchDonVi(http.Client()),
+                        builder: ((context, snapshot) {
+                          if (snapshot.hasData) {
+                            List<DonViObject> lsDonVi = snapshot.data!;
+                            return ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                shrinkWrap: true,
+                                itemCount: lsDonVi.length,
+                                itemBuilder: (((context, index) =>
+                                    buildDepartmentItem(
+                                      context,
+                                      'assets/Logo_Khoa/${lsDonVi[index].image}',
+                                      lsDonVi[index].name.toString(),
+                                      '80',
+                                      '90',
+                                      Colors.green,
+                                    ))));
+                          } else if (snapshot.hasError) {
+                            return const Center(
+                              child: Text('Hệ thống đang có sự cố!!'),
+                            );
+                          }
+                          return Center(
+                            child: SpinKitChasingDots(
+                              color: Color.fromARGB(255, 31, 60, 114),
+                              size: 50,
+                            ),
+                          );
+                        }),
+                      ),
+                    ),
                   ),
                 ],
               ),
