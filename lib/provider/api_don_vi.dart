@@ -10,7 +10,7 @@ class DonViProvider {
 }
 
 static Future<List<DonViObject>> fetchDonVi(http.Client http) async {
- const String url= 'https://ju3i0.localto.net/api/faculties';
+ const String url= 'https://ll1mf.localto.net/api/faculties';
   final response =  await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {

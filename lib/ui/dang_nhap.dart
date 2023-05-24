@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -16,20 +18,20 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 50),
-              Text(
+              const SizedBox(height: 50),
+              const Text(
                 'Đăng nhập',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Form(
                 key: _formKey,
                 child: Column(
@@ -49,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       decoration: InputDecoration(
                         labelText: 'Email',
-                        prefixIcon: Icon(Icons.email),
+                        prefixIcon: const Icon(Icons.email),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
@@ -58,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         fillColor: Colors.grey[200],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     TextFormField(
                       controller: _passwordController,
                       obscureText:
@@ -71,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                       },
                       decoration: InputDecoration(
                         labelText: 'Mật khẩu',
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock),
                         suffixIcon: GestureDetector(
                           onTap: () {
                             setState(() {
@@ -94,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                         fillColor: Colors.grey[200],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -103,15 +105,15 @@ class _LoginPageState extends State<LoginPage> {
                             //_login();
                           }
                         },
-                        child: Text(
-                          'Đăng nhập',
-                          style: TextStyle(fontSize: 20),
-                        ),
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(vertical: 20),
+                          padding: const EdgeInsets.symmetric(vertical: 20),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
+                        ),
+                        child: const Text(
+                          'Đăng nhập',
+                          style: TextStyle(fontSize: 20),
                         ),
                       ),
                     ),

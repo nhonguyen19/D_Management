@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Them_Thiet_Bi extends StatefulWidget {
+  const Them_Thiet_Bi({super.key});
+
   @override
   _Them_Thiet_BiState createState() => _Them_Thiet_BiState();
 }
@@ -20,11 +22,11 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Thêm thiết bị mới'),
+        title: const Text('Thêm thiết bị mới'),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
@@ -32,11 +34,11 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
               children: <Widget>[
                 _imageFile != null
                     ? Card(
-                        margin: EdgeInsets.all(10.0),
+                        margin: const EdgeInsets.all(10.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Container(
+                            SizedBox(
                               height: 200.0,
                               width: double.infinity,
                             child: Image.file(_imageFile!),
@@ -47,10 +49,10 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                     : Container(),
                 ElevatedButton(
                   onPressed: _getImage,
-                  child: Text('Thêm ảnh'),
+                  child: const Text('Thêm ảnh'),
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Tên thiết bị'),
+                  decoration: const InputDecoration(labelText: 'Tên thiết bị'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Vui lòng nhập tên thiết bị';
@@ -64,7 +66,7 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Loại thiết bị'),
+                  decoration: const InputDecoration(labelText: 'Loại thiết bị'),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Vui lòng nhập loại thiết bị';
@@ -78,7 +80,7 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Số lượng'),
+                  decoration: const InputDecoration(labelText: 'Số lượng'),
                   keyboardType: TextInputType.number,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -93,7 +95,7 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                   },
                 ),
                 TextFormField(
-                  decoration: InputDecoration(labelText: 'Mô tả'),
+                  decoration: const InputDecoration(labelText: 'Mô tả'),
                   maxLines: 4,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -107,7 +109,7 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                     }
                   },
                 ),
-                SizedBox(height: 16.0),
+                const SizedBox(height: 16.0),
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
@@ -115,7 +117,7 @@ class _Them_Thiet_BiState extends State<Them_Thiet_Bi> {
                       Navigator.pop(context);
                     }
                   },
-                  child: Text('Thêm mới'),
+                  child: const Text('Thêm mới'),
                 ),
               ],
             ),

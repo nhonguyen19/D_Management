@@ -14,10 +14,10 @@ class DonViObject {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Faculty_ID'] = this.id;
-    data['Faculty_Name'] = this.name;
-    data['Image']=this.image;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['Faculty_ID'] = id;
+    data['Faculty_Name'] = name;
+    data['Image']=image;
     return data;
   }
 }

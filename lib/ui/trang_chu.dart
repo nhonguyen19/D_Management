@@ -2,9 +2,14 @@ import 'package:devide_manager/ui/thiet_bi.dart';
 import 'package:devide_manager/ui/dang_nhap.dart';
 import 'package:devide_manager/ui/don_vi.dart';
 import 'package:devide_manager/widget/widget.dart';
+import 'package:devide_manager/object/TypeOfDeviceObject.dart';
+import 'package:devide_manager/provider/api_Type_Of_Device.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -12,7 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    var text = Text(
+    var text = const Text(
       'Danh sách đơn vị',
       style: TextStyle(
         fontSize: 20,
@@ -20,9 +25,9 @@ class _HomePageState extends State<HomePage> {
       ),
     );
     return Scaffold(
-      backgroundColor: Color(0xffF4F7FC),
+      backgroundColor: const Color(0xffF4F7FC),
       drawer: Drawer(
-        backgroundColor: Color(0xffF4F7FC),
+        backgroundColor: const Color(0xffF4F7FC),
         child: ListView(
           children: [
             const UserAccountsDrawerHeader(
@@ -48,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => const LoginPage(),
                       ),
                     )),
           ],
@@ -56,13 +61,13 @@ class _HomePageState extends State<HomePage> {
       ),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromARGB(255, 31, 60, 114),
-        title: Text(
+        backgroundColor: const Color.fromARGB(255, 31, 60, 114),
+        title: const Text(
           'Quản lý thiết bị nhà trường',
           style: TextStyle(color: Colors.white),
           textAlign: TextAlign.left,
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(
             Icons.search,
             color: Colors.white,
@@ -82,7 +87,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               height: 200,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/background.jpg'),
                   fit: BoxFit.contain,
@@ -118,15 +123,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Danh sách thiết bị',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
@@ -136,11 +141,11 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Thiet_Bi(),
+                          builder: (context) => const Thiet_Bi(),
                         ),
                       );
                     },
-                    child: Text(
+                    child: const Text(
                       'Xem tất cả',
                       style: TextStyle(
                         color: Colors.blue,
@@ -151,57 +156,56 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                   buildDeviceItem(
-                    context,
-                    'assets/maytinh.png',
-                    'Máy tính',
-                    '100',
-                    Colors.green,
-                  ),
-                  buildDeviceItem(
-                    context,
-                    'assets/laptop.jpg',
-                    'Laptop',
-                    '100',
-                    Colors.green,
-                  ),
-                  buildDeviceItem(
-                    context,
-                    'assets/maychieus.jpg',
-                    'Máy chiếu',
-                    '30',
-                    Colors.green,
-                  ),
-                  buildDeviceItem(
-                    context,
-                    'assets/bangthongminh.jpg',
-                    'Bảng thông minh',
-                    '20',
-                    Colors.green,
-                  ),
-                  buildDeviceItem(
-                    context,
-                    'assets/tablet.jpg',
-                    'Máy tính bảng',
-                    '50',
-                    Colors.green,
+                children: <Widget>[
+                  Expanded(
+                    child: SizedBox(
+                      height: 200,
+                      child: FutureBuilder<List<TypeOfDiviceObject>>(
+                        future: TypeOfDeviceProvider.fetchTypeOfDivice(
+                            http.Client()),
+                        builder: ((context, snapshot) {
+                          if (snapshot.hasData) {
+                            List<TypeOfDiviceObject> lsTypeOfDevice =
+                                snapshot.data!;
+                            return ListView.builder(
+                                scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: lsTypeOfDevice.length,
+                                itemBuilder: (((context, index) =>
+                                    buildDepartmentItem(
+                                      context,
+                                      'assets/Images_TOD/${lsTypeOfDevice[index].Image}',
+                                      lsTypeOfDevice[index]
+                                          .Type_Of_Device_Name
+                                          .toString(),
+                                      '80',
+                                      '60',
+                                      Colors.blue,
+                                    ))));
+                          } else if (snapshot.hasError) {
+                            return const Center(
+                              child: Text('Hệ thống đang có sự cố!!'),
+                            );
+                          }
+                          return const CircularProgressIndicator();
+                        }),
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
-              child: Flexible(  
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Flexible(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Danh sách đơn vị',
                       style: TextStyle(
                         fontSize: 20,
@@ -213,9 +217,9 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Don_Vi()));
+                                builder: (context) => const Don_Vi()));
                       },
-                      child: Text(
+                      child: const Text(
                         'Xem tất cả',
                         style: TextStyle(
                           color: Colors.blue,
@@ -227,46 +231,46 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   buildDepartmentItem(
                     context,
-                    'assets/khoacntt.png',
+                    'assets/Logo_Khoa/khoacntt.png',
                     'Khoa Công nghệ thông tin',
                     '80',
                     '60',
                     Colors.blue,
                   ),
-                    buildDepartmentItem(
+                  buildDepartmentItem(
                     context,
-                    'assets/khoaCK.jpg',
+                    'assets/Logo_Khoa/khoaCK.jpg',
                     'Khoa Cơ khí',
                     '80',
                     '60',
                     Colors.blue,
                   ),
-                     buildDepartmentItem(
+                  buildDepartmentItem(
                     context,
-                    'assets/khoaCKDL.png',
+                    'assets/Logo_Khoa/khoaCKDL.png',
                     'Khoa Cơ khí động lực',
                     '80',
                     '60',
                     Colors.blue,
                   ),
-                     buildDepartmentItem(
+                  buildDepartmentItem(
                     context,
-                    'assets/khoaDT.png',
+                    'assets/Logo_Khoa/khoaDT.png',
                     'Khoa Điện - Điện tử',
                     '80',
                     '60',
                     Colors.blue,
                   ),
-                       buildDepartmentItem(
+                  buildDepartmentItem(
                     context,
-                    'assets/khoaNhietLanh.jpg',
+                    'assets/Logo_Khoa/khoaNhietLanh.jpg',
                     'Khoa Nhiệt lạnh',
                     '80',
                     '60',
@@ -274,16 +278,16 @@ class _HomePageState extends State<HomePage> {
                   ),
                   buildDepartmentItem(
                     context,
-                    'assets/bomonKinhte.jpg',
+                    'assets/Logo_Khoa/bomonKinhte.jpg',
                     'Khoa Kinh tế',
                     '80',
                     '60',
                     Colors.blue,
                   ),
                   //update code tại chỗ này
-                    buildDepartmentItem(
+                  buildDepartmentItem(
                     context,
-                    'assets/bomonKinhte.jpg',
+                    'assets/Logo_Khoa/bomonKinhte.jpg',
                     'Khoa Kinh tế',
                     '80',
                     '60',
@@ -298,4 +302,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

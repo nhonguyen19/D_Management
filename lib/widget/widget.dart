@@ -3,7 +3,7 @@
  Widget buildDeviceItem(BuildContext context, String image, String name,
       String quantity, Color color) {
     return Container(
-      margin: EdgeInsets.only(left: 24),
+      margin: const EdgeInsets.only(left: 24),
       width: 140,
       height: 190,
       decoration: BoxDecoration(
@@ -13,7 +13,7 @@
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -31,24 +31,24 @@
               borderRadius: BorderRadius.circular(12),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             name,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             'Số lượng: $quantity',
-            style: TextStyle(fontSize: 14, color: Colors.grey),
+            style: const TextStyle(fontSize: 14, color: Colors.grey),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(16),
             ),
-            child: Text(
+            child: const Text(
               'Đang sử dụng',
               style: TextStyle(color: Colors.white),
             ),
@@ -158,7 +158,7 @@
   Widget buildDepartmentItem(
       BuildContext context, String image, String name, String total, String available, Color color) {
     return Container(
-      margin: EdgeInsets.only(left: 24),
+      margin: const EdgeInsets.only(left: 24),
       width: 350,
       height: 200,
       decoration: BoxDecoration(
@@ -168,7 +168,7 @@
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -182,7 +182,7 @@
                 image: AssetImage(image),
                 fit: BoxFit.cover,
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16),
                 bottomLeft: Radius.circular(16),
               ),
@@ -196,12 +196,12 @@
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       Icon(
@@ -209,7 +209,7 @@
                         size: 16,
                         color: Colors.grey[500],
                       ),
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Text(
                         'Tổng số: $total',
                         style: TextStyle(
@@ -219,7 +219,7 @@
                       ),
                     ],
                   ),
-                  SizedBox(height: 4),
+                  const SizedBox(height: 4),
                   Row(
                     children: [
                       Icon(
@@ -227,7 +227,7 @@
                         size: 16,
                         color: Colors.grey[500],
                       ),
-                      SizedBox(width: 4),
+                      const SizedBox(width: 4),
                       Text(
                         'Có sẵn: $available',
                         style: TextStyle(
@@ -237,13 +237,13 @@
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   LinearProgressIndicator(
                     value: int.parse(available) / int.parse(total),
                     valueColor: AlwaysStoppedAnimation<Color>(color),
                     backgroundColor: Colors.grey[200],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -253,11 +253,11 @@
                           foregroundColor: MaterialStateProperty.all<Color>(color),
                           overlayColor: MaterialStateProperty.all<Color>(color.withOpacity(0.1)),
                         ),
-                        child: Text('Chi tiết'),
+                        child: const Text('Chi tiết'),
                       ),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.add_circle_outline),
+                        icon: const Icon(Icons.add_circle_outline),
                         color: color,
                       ),
                     ],

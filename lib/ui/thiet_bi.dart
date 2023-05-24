@@ -1,117 +1,55 @@
-import 'package:devide_manager/ui/them_thiet_bi.dart';
-import 'package:devide_manager/ui/dang_nhap.dart';
+import 'package:devide_manager/object/DeviceObject.dart';
+import 'package:devide_manager/provider/api_Device.dart';
+import 'package:devide_manager/object/TypeOfDeviceObject.dart';
+import 'package:devide_manager/provider/api_Type_Of_Device.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-class Thiet_Bi extends StatelessWidget {
+class Thiet_Bi extends StatefulWidget{
+  const Thiet_Bi({super.key});
+
+  @override
+  _DeviceState createState()=>_DeviceState();
+}
+class _DeviceState extends State<Thiet_Bi> {
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Danh sách thiết bị'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(16),
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: EdgeInsets.only(bottom: 16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 5,
-                          offset: Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: ListTile(
-                      leading: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage('assets/laptop.jpg'),
-                            fit: BoxFit.fill,
+      body: FutureBuilder<List<DeviceObject>>(
+        future: DeviceProvider.fetchDevice(http.Client()),
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            List<DeviceObject> lsDevice = snapshot.data!;
+            return ListView.builder(
+              itemCount: lsDevice.length,
+              itemBuilder: ((context,index)=>Card(
+                  child:  Column(
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              ),
+                            title: Text(lsDevice[index].name.toString()),
+                            subtitle:Text(lsDevice[index].Status==1?"Hoạt động":"Không hoạt động" ),
+                            trailing: const Text('x'),
                           ),
-                        ),
+                        ],
                       ),
-                      title: Text(
-                        'Tên thiết bị',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text(
-                        'Số lượng thiết bị: 50',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                      trailing: IconButton(
-                        icon: Icon(Icons.arrow_forward_ios),
-                        onPressed: () {},
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+              )
+              )
+              );
+              
+         } else if (snapshot.hasError) {
+              return const Center(
+                child: Text('Hệ thống đang có sự cố!!'),
+              );
+            }
+            return const CircularProgressIndicator();
+          }
           ),
-          Container(
-            height: 70,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 5,
-                  offset: Offset(0, -2),
-                ),
-              ],
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Tổng số thiết bị: 5',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => Them_Thiet_Bi())));
-                    },
-                    child: Text(
-                      'Thêm thiết bị mới',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

@@ -24,6 +24,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/Logo_Khoa/
+    - assets/Images_TOD/
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf

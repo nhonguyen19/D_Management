@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.devide_manager.app-mergeDebugResources-17:/values-ky/values-ky.xml",
+            "outputFile": "com.example.devide_manager.app-mergeDebugResources-21:/values-ky/values-ky.xml",
             "map": [
                 {
                     "source": "C:\\Users\\MITS\\.gradle\\caches\\transforms-3\\5f80b20db3afa86c72a9766b008d752d\\transformed\\core-1.9.0\\res\\values-ky\\values-ky.xml",

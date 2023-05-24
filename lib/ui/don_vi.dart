@@ -1,10 +1,11 @@
 
 import 'package:devide_manager/object/DonViOject.dart';
 import 'package:devide_manager/provider/api_don_vi.dart';
-import 'package:image_network/image_network.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 class Don_Vi extends StatefulWidget {
+  const Don_Vi({super.key});
+
   @override
   _Don_ViState createState() => _Don_ViState();
 }
@@ -23,7 +24,7 @@ class _Don_ViState extends State<Don_Vi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Danh sách đơn vị'),
+        title: const Text('Danh sách đơn vị'),
       ),
       body: FutureBuilder<List<DonViObject>>(
       
@@ -38,24 +39,25 @@ class _Don_ViState extends State<Don_Vi> {
                         children: [
                           ListTile(
                             leading: CircleAvatar(
-                              child: Image.asset('assets/'+lsDonVi[index].image.toString()),
+                              child: Image.asset('assets/Logo_Khoa/${lsDonVi[index].image}'),
                               ),
                             
                             title: Text(lsDonVi[index].name.toString()),
                             subtitle: Text(lsDonVi[index].image.toString()),
-                            trailing: Text('x'),
+                            trailing: const Text('x'),
                           ),
                         ],
                       ),
                     )),
               );
             } else if (snapshot.hasError) {
-              return Center(
+              return const Center(
                 child: Text('Hệ thống đang có sự cố!!'),
               );
             }
-            return CircularProgressIndicator();
-          }),
+            return const CircularProgressIndicator();
+          }
+          ),
     );
   }
 }

@@ -126,6 +126,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id report_drawn
 id right_icon
 id right_side
 id rtl
@@ -161,6 +162,7 @@ layout notification_template_part_time
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
+string androidx_startup
 string status_bar_notification_info_overflow
 style LaunchTheme
 style NormalTheme
