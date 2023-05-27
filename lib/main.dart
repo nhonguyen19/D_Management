@@ -1,4 +1,4 @@
-import 'package:devide_manager/ui/trang_chu.dart';
+import 'package:devide_manager/ui/Home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

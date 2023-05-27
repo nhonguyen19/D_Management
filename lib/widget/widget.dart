@@ -83,7 +83,7 @@
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(image),
+                image: NetworkImage(image),
                 fit: BoxFit.cover,
               ),
               borderRadius: const BorderRadius.only(

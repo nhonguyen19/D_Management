@@ -6,7 +6,8 @@ class DeviceObject {
   int? Room_ID;
   int? Faculty_ID;
   int? Brand_ID;
-  String? name;
+  String? Device_Name;
+  String? Image;
   String? QRCode;
   String? Price;
   String? Warranty_Period;
@@ -23,7 +24,8 @@ class DeviceObject {
     this.Room_ID,
     this.Faculty_ID,
     this.Brand_ID,
-    this.name,
+    this.Device_Name,
+    this.Image,
     this.QRCode,
     this.Price,
     this.Warranty_Period,
@@ -39,7 +41,8 @@ class DeviceObject {
     Room_ID = json['Room_ID'];
     Faculty_ID = json['Faculty_ID'];
     Brand_ID = json['Brand_ID'];
-    name = json['Device_Name'];
+    Device_Name = json['Device_Name'];
+    Image = json['Image'];
     QRCode = json['QRCode'];
     Price = json['Price'];
     Warranty_Period = json['Warranty_Period'];
@@ -57,7 +60,8 @@ class DeviceObject {
     data['Room_ID'] = Room_ID;
     data['Brand_ID'] = Brand_ID;
     data['Faculty_ID'] = Faculty_ID;
-    data['Device_Name'] = name;
+    data['Device_Name'] = Device_Name;
+    data['Image'] = Image;
     data['QRCode'] = QRCode;
     data['Price'] = Price;
     data['Warranty_Period'] = Warranty_Period;

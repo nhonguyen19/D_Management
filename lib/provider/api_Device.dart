@@ -10,7 +10,7 @@ class DeviceProvider {
 }
 
 static Future<List<DeviceObject>> fetchDevice(http.Client http) async {
- const String url= 'https://ll1mf.localto.net/api/devices';
+ const String url= 'https://x2rso.localto.net/api/devices';
   final response =  await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {
