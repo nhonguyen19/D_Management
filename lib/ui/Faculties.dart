@@ -37,7 +37,7 @@ class _Don_ViState extends State<Don_Vi> {
         ],
       ),
       body: FutureBuilder<List<FacultyObject>>(
-          future: DonViProvider.fetchDonVi(http.Client()),
+          future: FacultyProvider.fetchFaculty(http.Client()),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               List<FacultyObject> lsDonVi = snapshot.data!;

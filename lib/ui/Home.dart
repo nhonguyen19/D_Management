@@ -67,7 +67,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color.fromARGB(255, 31, 60, 114),
         title: const Text(
           'Quản lý thiết bị nhà trường',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            fontSize:18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white
+          ),
           textAlign: TextAlign.left,
         ),
         actions: const <Widget>[
@@ -163,12 +167,10 @@ class _HomePageState extends State<HomePage> {
                     child: SizedBox(
                       height: 200,
                       child: FutureBuilder<List<TypeOfDiviceObject>>(
-                        future: TypeOfDeviceProvider.fetchTypeOfDivice(
-                            http.Client()),
+                        future: TypeOfDeviceProvider.fetchTypeOfDivice(http.Client()),
                         builder: ((context, snapshot) {
                           if (snapshot.hasData) {
-                            List<TypeOfDiviceObject> lsTypeOfDevice =
-                                snapshot.data!;
+                            List<TypeOfDiviceObject> lsTypeOfDevice = snapshot.data!;
                             return ListView.builder(
                                 scrollDirection: Axis.horizontal,
                                 shrinkWrap: true,
@@ -176,12 +178,10 @@ class _HomePageState extends State<HomePage> {
                                 itemBuilder: (((context, index) =>
                                     buildDeviceItem(
                                       context,
-                                      'assets/Images_TOD/${lsTypeOfDevice[index].Image}',
-                                      lsTypeOfDevice[index]
-                                          .Type_Of_Device_Name
-                                          .toString(),
+                                      lsTypeOfDevice[index].Image.toString(),
+                                      lsTypeOfDevice[index].Type_Of_Device_Name.toString(),
                                       '80',
-                                      Colors.green,
+                                      Color.fromARGB(255, 19, 200, 19),
                                     ))));
                           } else if (snapshot.hasError) {
                             return const Center(
@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
                     child: SizedBox(
                       height: 190,
                       child: FutureBuilder<List<FacultyObject>>(
-                        future: DonViProvider.fetchDonVi(http.Client()),
+                        future: FacultyProvider.fetchFaculty(http.Client()),
                         builder: ((context, snapshot) {
                           if (snapshot.hasData) {
                             List<FacultyObject> lsDonVi = snapshot.data!;

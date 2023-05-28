@@ -15,17 +15,26 @@ class Thiet_Bi extends StatefulWidget {
   @override
   _DeviceState createState() => _DeviceState();
 }
-
 class _DeviceState extends State<Thiet_Bi> {
   bool _isSearching = false;
   @override
+  void initState() {
+    super.initState();
+    
+  }
+  @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 31, 60, 114),
         title: _isSearching
             ? TextField(
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+            fontSize:18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white
+          ),
               )
             : const Text('Danh sách thiết bị'),
         actions: [
@@ -57,17 +66,7 @@ class _DeviceState extends State<Thiet_Bi> {
                               ),
                               title:
                                   Text(lsDevice[index].Device_Name.toString()),
-                              subtitle: Text(
-                                lsDevice[index].Status == 1
-                                    ? "Hoạt động"
-                                    : "Không hoạt động",
-                                style: TextStyle(
-                                  color: lsDevice[index].Status == 1
-                                      ? Colors.green
-                                      : Colors.red,
-                                ),
-                              ),
-                              trailing: GestureDetector(
+                              subtitle: GestureDetector(
                                 onTap: () {
                                   Navigator.push(
                                       context,
@@ -82,6 +81,13 @@ class _DeviceState extends State<Thiet_Bi> {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
+                              ),
+                              trailing: Image.asset(
+                                lsDevice[index].Status == 1
+                                    ? 'assets/Gif_Status/automation.gif'
+                                    : 'assets/Gif_Status/repair.gif',
+                                    width: 30,
+                                    height: 30,
                               ),
                             ),
                           ],

@@ -12,10 +12,12 @@ dependencies:
   simple_animations: ^5.0.0+3
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.2.3
+  clippy_flutter: ^2.0.0-nullsafety.1
   uuid: ^3.0.7
   image_picker: ^0.8.7+2
   image_network: ^2.5.2
   flutter_spinkit: ^5.1.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +30,7 @@ flutter:
     - assets/
     - assets/Logo_Khoa/
     - assets/Images_TOD/
+    - assets/Gif_Status/
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf

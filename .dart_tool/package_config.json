@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "clippy_flutter",
+      "rootUri": "file:///C:/Users/MITS/AppData/Local/Pub/Cache/hosted/pub.dev/clippy_flutter-2.0.0-nullsafety.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///C:/Users/MITS/AppData/Local/Pub/Cache/hosted/pub.dev/clock-1.1.1",
       "packageUri": "lib/",
@@ -178,6 +184,12 @@
     {
       "name": "image_picker_platform_interface",
       "rootUri": "file:///C:/Users/MITS/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_platform_interface-2.6.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/MITS/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -428,7 +440,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-27T03:30:06.638921Z",
+  "generated": "2023-05-28T17:25:30.413695Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

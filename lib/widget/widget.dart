@@ -1,4 +1,10 @@
- import 'package:flutter/material.dart';
+ import 'package:clippy_flutter/clippy_flutter.dart';
+import 'package:devide_manager/object/TypeOfDeviceObject.dart';
+import 'package:devide_manager/provider/api_Type_Of_Device.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:http/http.dart' as http;
+
 //thiết bị
  Widget buildDeviceItem(BuildContext context, String image, String name,
       String quantity, Color color) {
@@ -25,7 +31,7 @@
             height: 64,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(image),
+                image: NetworkImage(image),
                 fit: BoxFit.fill,
               ),
               borderRadius: BorderRadius.circular(12),
@@ -174,3 +180,39 @@
       ),
     );
   }
+class ItemAppBar extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    
+    return Container(
+      color: Color.fromARGB(255, 31, 60, 114),
+      padding: EdgeInsets.all(25),
+      child: Row(
+        children: [
+          InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back,
+              size:30,
+              color: Colors.white,
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(left: 20),
+          child: Text("Chi tiết thiết bị",
+          style: TextStyle(
+            fontSize:18,
+            fontWeight: FontWeight.bold,
+            color: Colors.white
+          ),
+          ),
+          ),
+          Spacer(),
+        ],
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
