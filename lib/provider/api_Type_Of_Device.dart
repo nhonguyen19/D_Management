@@ -10,7 +10,7 @@ class TypeOfDeviceProvider {
 }
 
 static Future<List<TypeOfDiviceObject>> fetchTypeOfDivice(http.Client http) async {
- const String url= 'https://x2rso.localto.net/api/type-of-devices/';
+ const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/type-of-devices';
   final response =  await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {

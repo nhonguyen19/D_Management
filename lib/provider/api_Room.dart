@@ -11,7 +11,7 @@ class RoomProvider {
 }
 
 static Future<List<RoomObject>> fetchRoom(http.Client http) async {
- const String url= 'https://x2rso.localto.net/api/rooms';
+ const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/rooms';
   final response =  await http.get(Uri.parse(url));
 
   if (response.statusCode == 200) {

@@ -2,8 +2,6 @@ class FacultyObject {
   int? id;
   String? name;
   String? image;
-  String? createdAt;
-  String? updatedAt;
 
   FacultyObject({this.id, this.name});
 
