@@ -1,5 +1,7 @@
 import 'package:devide_manager/object/FacultyOject.dart';
 import 'package:devide_manager/provider/api_Faculties.dart';
+import 'package:devide_manager/ui/SearchScreen.dart';
+import 'package:devide_manager/ui/searchFaculties.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
@@ -23,12 +25,25 @@ class _Don_ViState extends State<Don_Vi> {
         title: _isSearching
             ? TextField(
                 style: TextStyle(color: Colors.white),
+                autofocus: true, // Tự động focus vào TextField khi hiển thị
+                decoration: InputDecoration(
+                  hintText: 'Tìm kiếm',
+                  hintStyle: TextStyle(color: Colors.white70),
+                  border: InputBorder.none,
+                ),
+                onChanged: (value) {
+                  // Xử lý khi người dùng thay đổi nội dung tìm kiếm
+                  // ...
+                },
               )
             : const Text('Danh sách đơn vị'),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchScreen()));
+
               setState(() {
                 _isSearching = !_isSearching;
               });

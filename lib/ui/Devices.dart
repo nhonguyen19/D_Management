@@ -28,25 +28,31 @@ class _DeviceState extends State<Thiet_Bi> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 31, 60, 114),
-        title: _isSearching
-            ? TextField(
-                style: TextStyle(
-            fontSize:18,
-            fontWeight: FontWeight.bold,
-            color: Colors.white
-          ),
-              )
-            : const Text('Danh sách thiết bị'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {
-              setState(() {
-                _isSearching = !_isSearching;
-              });
-            },
-          ),
-        ],
+      title: _isSearching
+          ? TextField(
+              style: TextStyle(color: Colors.white),
+              autofocus: true, // Tự động focus vào TextField khi hiển thị
+              decoration: InputDecoration(
+                hintText: 'Tìm kiếm',
+                hintStyle: TextStyle(color: Colors.white70),
+                border: InputBorder.none,
+              ),
+              onChanged: (value) {
+                // Xử lý khi người dùng thay đổi nội dung tìm kiếm
+                // ...
+              },
+            )
+          : const Text('Danh sách thiết bị'),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {
+            setState(() {
+              _isSearching = !_isSearching;
+            });
+          },
+        ),
+      ],
       ),
       body: FutureBuilder<List<DeviceObject>>(
           future: DeviceProvider.fetchDevice(http.Client()),

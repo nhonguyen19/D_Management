@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
           Icon(
             Icons.search,
             color: Colors.white,
-          ),
+                      ),
           SizedBox(width: 10),
           Icon(
             Icons.notifications,
