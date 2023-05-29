@@ -32,7 +32,11 @@ class _Don_ViState extends State<Don_Vi> {
       });
     } catch (error) {
       print('Error fetching faculties: $error');
-      // Xử lý lỗi tại đây (ví dụ: hiển thị thông báo lỗi)
+       ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Error fetching faculties. Please try again later.'),
+      ),
+    );
     }
   }
 
@@ -60,7 +64,8 @@ class _Don_ViState extends State<Don_Vi> {
                 text = text.toLowerCase();
                 setState(() {
                   _facultyDisplay = _faculty.where((faculty) {
-                    return faculty.name!.toLowerCase().contains(text);
+                    return faculty.name!.toLowerCase().contains(text) ||
+                    faculty.image!.toLowerCase().contains(text); 
                   }).toList();
                 });
               },
@@ -82,7 +87,10 @@ class _Don_ViState extends State<Don_Vi> {
   Widget _buildFacultyList() {
     if (_facultyDisplay.isEmpty) {
       return Center(
-        child: Text('Không tìm thấy đơn vị nào.'),
+        child: SpinKitChasingDots(
+          color: Color.fromARGB(255, 31, 60, 114),
+          size: 50,
+        ),
       );
     }
 
@@ -100,7 +108,7 @@ class _Don_ViState extends State<Don_Vi> {
         ),
         title: Text(_facultyDisplay[index].name.toString()),
         subtitle: Text(_facultyDisplay[index].image.toString()),
-        trailing: const Text('x'),
+        trailing: const Text(''),
       ),
     );
   }
