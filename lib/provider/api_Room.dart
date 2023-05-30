@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:devide_manager/provider/link_api.dart';
 import 'package:http/http.dart' as http;
 
 import '../object/RoomObject.dart';
@@ -11,8 +12,8 @@ class RoomProvider {
 }
 
 static Future<List<RoomObject>> fetchRoom(http.Client http) async {
- const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/rooms';
-  final response =  await http.get(Uri.parse(url));
+ Ngrok ngrok= Ngrok();
+  final response =  await http.get(Uri.parse(ngrok.api_Rooms));
 
   if (response.statusCode == 200) {
     return parseRoom(response.body);

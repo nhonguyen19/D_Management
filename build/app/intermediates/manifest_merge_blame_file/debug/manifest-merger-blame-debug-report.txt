@@ -16,141 +16,235 @@
 15-->D:\HK6\Do_An_Tot_Nghiep\D_Management\android\app\src\debug\AndroidManifest.xml:7:5-66
 15-->D:\HK6\Do_An_Tot_Nghiep\D_Management\android\app\src\debug\AndroidManifest.xml:7:22-64
 16
-17    <permission
-17-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-18        android:name="com.example.devide_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-18-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-19        android:protectionLevel="signature" />
-19-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-20
-21    <uses-permission android:name="com.example.devide_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-21-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-21-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+17    <queries>
+17-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-13:15
+18        <intent>
+18-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-12:18
+19            <action android:name="android.support.customtabs.action.CustomTabsService" />
+19-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-90
+19-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:11:21-87
+20        </intent>
+21    </queries>
 22
-23    <application
-24        android:name="android.app.Application"
-25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-26        android:debuggable="true"
-27        android:icon="@mipmap/ic_launcher"
-28        android:label="Device Manage" >
-29        <activity
-30            android:name="com.example.devide_manager.MainActivity"
-31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-32            android:exported="true"
-33            android:hardwareAccelerated="true"
-34            android:launchMode="singleTop"
-35            android:theme="@style/LaunchTheme"
-36            android:windowSoftInputMode="adjustResize" >
-37
-38            <!--
-39                 Specifies an Android theme to apply to this Activity as soon as
-40                 the Android process has started. This theme is visible to the user
-41                 while the Flutter UI initializes. After that, this theme continues
-42                 to determine the Window background behind the Flutter UI.
-43            -->
-44            <meta-data
-45                android:name="io.flutter.embedding.android.NormalTheme"
-46                android:resource="@style/NormalTheme" />
-47
-48            <intent-filter>
-49                <action android:name="android.intent.action.MAIN" />
-50
-51                <category android:name="android.intent.category.LAUNCHER" />
-52            </intent-filter>
-53        </activity>
-54        <!--
-55             Don't delete the meta-data below.
-56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-57        -->
-58        <meta-data
-59            android:name="flutterEmbedding"
-60            android:value="2" />
-61
-62        <provider
-62-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
-63            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-63-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
-64            android:authorities="com.example.devide_manager.flutter.image_provider"
-64-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
-65            android:exported="false"
-65-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
-66            android:grantUriPermissions="true" >
-66-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
-67            <meta-data
-67-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
-68                android:name="android.support.FILE_PROVIDER_PATHS"
-68-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
-69                android:resource="@xml/flutter_image_picker_file_paths" />
-69-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
-70        </provider>
-71
-72        <uses-library
-72-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-73            android:name="androidx.window.extensions"
-73-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-74            android:required="false" />
-74-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-75        <uses-library
-75-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-76            android:name="androidx.window.sidecar"
-76-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-77            android:required="false" />
-77-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-78
-79        <provider
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
-80            android:name="androidx.startup.InitializationProvider"
-80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
-81            android:authorities="com.example.devide_manager.androidx-startup"
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
-82            android:exported="false" >
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
-83            <meta-data
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-85                android:value="androidx.startup" />
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-86        </provider>
-87
-88        <receiver
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-89            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-90            android:directBootAware="false"
-90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-91            android:enabled="true"
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-92            android:exported="true"
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-93            android:permission="android.permission.DUMP" >
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-94            <intent-filter>
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-95                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-96            </intent-filter>
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-98                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-101                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-104                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-105            </intent-filter>
-106        </receiver>
-107    </application>
-108
-109</manifest>
+23    <permission
+23-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+24        android:name="com.example.devide_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+26
+27    <uses-permission android:name="com.example.devide_manager.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+27-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+28
+29    <application
+30        android:name="android.app.Application"
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.9.0] C:\Users\MITS\.gradle\caches\transforms-3\5f80b20db3afa86c72a9766b008d752d\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/ic_launcher"
+34        android:label="Device Manage" >
+35        <activity
+36            android:name="com.example.devide_manager.MainActivity"
+37            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+38            android:exported="true"
+39            android:hardwareAccelerated="true"
+40            android:launchMode="singleTop"
+41            android:theme="@style/LaunchTheme"
+42            android:windowSoftInputMode="adjustResize" >
+43
+44            <!--
+45                 Specifies an Android theme to apply to this Activity as soon as
+46                 the Android process has started. This theme is visible to the user
+47                 while the Flutter UI initializes. After that, this theme continues
+48                 to determine the Window background behind the Flutter UI.
+49            -->
+50            <meta-data
+51                android:name="io.flutter.embedding.android.NormalTheme"
+52                android:resource="@style/NormalTheme" />
+53
+54            <intent-filter>
+55                <action android:name="android.intent.action.MAIN" />
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+58            </intent-filter>
+59        </activity>
+60        <!--
+61             Don't delete the meta-data below.
+62             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+63        -->
+64        <meta-data
+65            android:name="flutterEmbedding"
+66            android:value="2" />
+67
+68        <provider
+68-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+69            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+69-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+70            android:authorities="com.example.devide_manager.flutter.image_provider"
+70-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+71            android:exported="false"
+71-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+72            android:grantUriPermissions="true" >
+72-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+73            <meta-data
+73-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+74                android:name="android.support.FILE_PROVIDER_PATHS"
+74-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+75                android:resource="@xml/flutter_image_picker_file_paths" />
+75-->[:image_picker_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+76        </provider>
+77
+78        <activity
+78-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-20:47
+79            android:name="com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity"
+79-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-104
+80            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+80-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-137
+81            android:exported="false"
+81-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-37
+82            android:theme="@style/AppTheme" />
+82-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-44
+83        <activity
+83-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-24:55
+84            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivity"
+84-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-112
+85            android:exported="false"
+85-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-37
+86            android:theme="@style/ThemeTransparent" />
+86-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-52
+87        <activity
+87-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:25:9-28:55
+88            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivity"
+88-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-106
+89            android:exported="false"
+89-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-37
+90            android:theme="@style/ThemeTransparent" />
+90-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-52
+91        <activity
+91-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:29:9-33:55
+92            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeCustomTabsActivitySingleInstance"
+92-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:30:13-126
+93            android:exported="false"
+93-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:31:13-37
+94            android:launchMode="singleInstance"
+94-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:32:13-48
+95            android:theme="@style/ThemeTransparent" />
+95-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:33:13-52
+96        <activity
+96-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:34:9-38:55
+97            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.TrustedWebActivitySingleInstance"
+97-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:35:13-120
+98            android:exported="false"
+98-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:36:13-37
+99            android:launchMode="singleInstance"
+99-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:37:13-48
+100            android:theme="@style/ThemeTransparent" />
+100-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:38:13-52
+101
+102        <receiver
+102-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:40:9-43:40
+103            android:name="com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ActionBroadcastReceiver"
+103-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-111
+104            android:enabled="true"
+104-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-35
+105            android:exported="false" />
+105-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-37
+106
+107        <meta-data
+107-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:45:9-47:36
+108            android:name="io.flutter.embedded_views_preview"
+108-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-61
+109            android:value="true" />
+109-->[:flutter_inappwebview] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\flutter_inappwebview\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-33
+110
+111        <activity
+111-->[:url_launcher_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+112            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+112-->[:url_launcher_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+113            android:exported="false"
+113-->[:url_launcher_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+114            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+114-->[:url_launcher_android] D:\HK6\Do_An_Tot_Nghiep\D_Management\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+115
+116        <provider
+116-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+117            android:name="androidx.startup.InitializationProvider"
+117-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+118            android:authorities="com.example.devide_manager.androidx-startup"
+118-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+119            android:exported="false" >
+119-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+120            <meta-data
+120-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+121                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+121-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+122                android:value="androidx.startup" />
+122-->[androidx.emoji2:emoji2:1.2.0] C:\Users\MITS\.gradle\caches\transforms-3\3a84313d968af3eb85517cc73aa68eb8\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+123            <meta-data
+123-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MITS\.gradle\caches\transforms-3\ff780403b4846c4ebc2c088fd1a75c87\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+124                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+124-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MITS\.gradle\caches\transforms-3\ff780403b4846c4ebc2c088fd1a75c87\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+125                android:value="androidx.startup" />
+125-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\MITS\.gradle\caches\transforms-3\ff780403b4846c4ebc2c088fd1a75c87\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+126            <meta-data
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+127                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+128                android:value="androidx.startup" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+129        </provider>
+130
+131        <uses-library
+131-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+132            android:name="androidx.window.extensions"
+132-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+133            android:required="false" />
+133-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+134        <uses-library
+134-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+135            android:name="androidx.window.sidecar"
+135-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+136            android:required="false" />
+136-->[androidx.window:window:1.0.0-beta04] C:\Users\MITS\.gradle\caches\transforms-3\029a46117874c9a179f93d49be86c033\transformed\window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+137
+138        <receiver
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+139            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+139-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+140            android:directBootAware="false"
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+141            android:enabled="true"
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+142            android:exported="true"
+142-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+143            android:permission="android.permission.DUMP" >
+143-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+144            <intent-filter>
+144-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+145                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+145-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+146            </intent-filter>
+147            <intent-filter>
+147-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+148                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+148-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+148-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+149            </intent-filter>
+150            <intent-filter>
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+151                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+152            </intent-filter>
+153            <intent-filter>
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+154                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\MITS\.gradle\caches\transforms-3\635c7053d24be789ec125360f5552b1c\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+155            </intent-filter>
+156        </receiver>
+157    </application>
+158
+159</manifest>

@@ -257,8 +257,8 @@ class _HomePageState extends State<HomePage> {
                                       context,
                                       lsDonVi[index].image.toString(),
                                       lsDonVi[index].name.toString(),
-                                      '80',
-                                      '90',
+                                      '${lsDonVi.length}',
+                                      '${lsDonVi.length}',
                                       Colors.green,
                                     ))));
                           } else if (snapshot.hasError) {

@@ -1,6 +1,9 @@
 import 'dart:convert';
 import 'package:devide_manager/object/BrandObject.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import 'link_api.dart';
 
 class BrandProvide {
 
@@ -10,8 +13,8 @@ class BrandProvide {
 }
 
 static Future<List<BrandObject>> fetchBrand(http.Client http) async {
- const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/brands';
-  final response =  await http.get(Uri.parse(url));
+    Ngrok ngrok= Ngrok();
+  final response =  await http.get(Uri.parse(ngrok.api_Brands));
 
   if (response.statusCode == 200) {
     return parseBrand(response.body);

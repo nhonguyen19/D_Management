@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:devide_manager/object/DeviceObject.dart';
+import 'package:devide_manager/provider/link_api.dart';
 import 'package:http/http.dart' as http;
 
 class DeviceProvider {
@@ -10,8 +11,8 @@ class DeviceProvider {
 }
 
 static Future<List<DeviceObject>> fetchDevice(http.Client http) async {
- const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/devices';
-  final response =  await http.get(Uri.parse(url));
+  Ngrok ngrok= Ngrok();
+  final response =  await http.get(Uri.parse(ngrok.api_Devices));
 
   if (response.statusCode == 200) {
     return parseDevice(response.body);

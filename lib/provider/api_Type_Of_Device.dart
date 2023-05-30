@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:devide_manager/object/TypeOfDeviceObject.dart';
+import 'package:devide_manager/provider/link_api.dart';
 import 'package:http/http.dart' as http;
 
 class TypeOfDeviceProvider {
@@ -10,8 +11,8 @@ class TypeOfDeviceProvider {
 }
 
 static Future<List<TypeOfDiviceObject>> fetchTypeOfDivice(http.Client http) async {
- const String url= 'https://29ed-115-79-225-122.ngrok-free.app/api/type-of-devices';
-  final response =  await http.get(Uri.parse(url));
+ Ngrok ngrok= Ngrok();
+  final response =  await http.get(Uri.parse(ngrok.api_Type_Of_Devices));
 
   if (response.statusCode == 200) {
     return parseTypeOfDevice(response.body);
