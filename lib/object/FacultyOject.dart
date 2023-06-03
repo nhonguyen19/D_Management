@@ -1,21 +1,29 @@
 class FacultyObject {
-  int? id;
-  String? name;
+  int? facultyID;
+  String? facultyName;
   String? image;
+  int? status;
 
-  FacultyObject({this.id, this.name});
+  FacultyObject(
+      {this.facultyID,
+      this.facultyName,
+      this.image,
+      this.status,
+     });
 
   FacultyObject.fromJson(Map<String, dynamic> json) {
-    id = json['Faculty_ID'];
-    name = json['Faculty_Name'];
+    facultyID = json['Faculty_ID'];
+    facultyName = json['Faculty_Name'];
     image = json['Image'];
+    status = json['Status'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['Faculty_ID'] = id;
-    data['Faculty_Name'] = name;
-    data['Image']=image;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['Faculty_ID'] = this.facultyID;
+    data['Faculty_Name'] = this.facultyName;
+    data['Image'] = this.image;
+    data['Status'] = this.status;
     return data;
   }
 }

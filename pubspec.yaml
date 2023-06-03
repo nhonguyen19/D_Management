@@ -20,6 +20,10 @@ dependencies:
   intl: ^0.18.1
   url_launcher: ^6.1.11
   flutter_inappwebview: ^5.7.2+3
+  firebase_storage: ^11.2.2
+  firebase_core: ^2.13.1
+  express_dt: ^1.0.5
+  path_provider: ^2.0.15
 
 dev_dependencies:
   flutter_test:

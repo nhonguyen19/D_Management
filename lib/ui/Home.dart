@@ -1,5 +1,7 @@
 import 'package:devide_manager/object/FacultyOject.dart';
+import 'package:devide_manager/object/TeacherInformationObject.dart';
 import 'package:devide_manager/provider/api_Faculties.dart';
+import 'package:devide_manager/ui/Configuration.dart';
 import 'package:devide_manager/ui/Devices.dart';
 import 'package:devide_manager/ui/Login.dart';
 import 'package:devide_manager/ui/Faculties.dart';
@@ -11,14 +13,23 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  TeacherInformationObject teacherInformation;
+   HomePage({
+    Key?key,
+    required this.teacherInformation
+    }): super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState(teacherInformation:teacherInformation);
 }
 
 class _HomePageState extends State<HomePage> {
+  late TeacherInformationObject teacherInformation;
   @override
+  _HomePageState({
+    Key?key,
+    required this.teacherInformation
+  });
   Widget build(BuildContext context) {
     var text = const Text(
       'Danh sách đơn vị',
@@ -57,6 +68,15 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const LoginPage(),
+                      ),
+                    )),
+                    ListTile(
+                leading: Icon(Icons.line_weight_outlined),
+                title: const Text('Cấu hình'),
+                onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Configuration(),
                       ),
                     )),
           ],
@@ -256,9 +276,9 @@ class _HomePageState extends State<HomePage> {
                                     buildDepartmentItem(
                                       context,
                                       lsDonVi[index].image.toString(),
-                                      lsDonVi[index].name.toString(),
-                                      '${lsDonVi.length}',
-                                      '${lsDonVi.length}',
+                                      lsDonVi[index].facultyName.toString(),
+                                      '80',
+                                      '90',
                                       Colors.green,
                                     ))));
                           } else if (snapshot.hasError) {

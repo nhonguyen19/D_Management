@@ -133,7 +133,7 @@ class _DeviceState extends State<Thiet_Bi> {
                 );
               },
               child: const Text(
-                'Xem tất cả',
+                'Xem chi tiết',
                 style: TextStyle(
                   color: Color.fromARGB(255, 31, 60, 114),
                   fontWeight: FontWeight.bold,

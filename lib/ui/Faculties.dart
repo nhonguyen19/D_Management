@@ -74,7 +74,7 @@ class _Don_ViState extends State<Don_Vi> {
                 text = text.toLowerCase();
                 setState(() {
                   _facultyDisplay = _faculty.where((faculty) {
-                    return faculty.name!.toLowerCase().contains(text) ||
+                    return faculty.facultyName!.toLowerCase().contains(text) ||
                         faculty.image!.toLowerCase().contains(text);
                   }).toList();
                 });
@@ -114,7 +114,7 @@ class _Don_ViState extends State<Don_Vi> {
   final FacultyObject faculty = _facultyDisplay[index];
 
   return Dismissible(
-    key: Key(faculty.id.toString()),
+    key: Key(faculty.facultyID.toString()),
     direction: DismissDirection.endToStart,
     background: Container(
       color: Colors.orange,
@@ -132,7 +132,7 @@ class _Don_ViState extends State<Don_Vi> {
         leading: CircleAvatar(
           child: Image.network(faculty.image.toString()),
         ),
-        title: Text(faculty.name.toString()),
+        title: Text(faculty.facultyName.toString()),
         subtitle: Text(faculty.image.toString()),
         trailing: IconButton(
           icon: Icon(Icons.delete),

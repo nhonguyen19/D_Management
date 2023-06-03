@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:devide_manager/object/TypeOfDeviceObject.dart';
-import 'package:devide_manager/provider/link_api.dart';
+import 'package:devide_manager/provider/api_link.dart';
 import 'package:http/http.dart' as http;
 
 class TypeOfDeviceProvider {

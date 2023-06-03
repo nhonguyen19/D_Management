@@ -213,6 +213,18 @@ class _DeviceDetail_State extends State<Device_Details> {
                               color: Colors.white),
                         ),
                       ),
+                       Row(
+                        children: [
+                          Text(
+                            'Cấu hình',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ],
+                      ),
+                       GetConfigurationSpecification(id: deviceDetail.id!, displayString:'')
                     ],
                   ),
                 ),
