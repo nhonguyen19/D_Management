@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class BrandObject {
   int? id;
   String? name;

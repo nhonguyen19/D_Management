@@ -62,7 +62,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-                leading: const Icon(Icons.login_rounded),
+                leading: Image.asset('assets/Icon/login_x64.png',
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,),
                 title: const Text('Đăng nhập'),
                 onTap: () => Navigator.push(
                       context,
@@ -71,7 +74,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     )),
                     ListTile(
-                leading: Icon(Icons.line_weight_outlined),
+                leading: Image.asset('assets/Icon/Configuration.png',
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,),
                 title: const Text('Cấu hình'),
                 onTap: () => Navigator.push(
                       context,

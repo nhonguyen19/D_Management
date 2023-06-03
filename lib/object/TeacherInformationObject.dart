@@ -7,6 +7,7 @@ class TeacherInformationObject {
   String? teacher_Name;
   String? phone_Number;
   String? address;
+  int? status;
 
   TeacherInformationObject({
     this.id,
@@ -15,7 +16,8 @@ class TeacherInformationObject {
     this.password,
     this.teacher_Name,
     this.phone_Number,
-    this.address
+    this.address,
+    this.status
     });
 
   TeacherInformationObject.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class TeacherInformationObject {
     teacher_Name = json['Teacher_Name'];
     phone_Number = json['Phone_Number'];
     address = json['Address'];
+    status = json['Status'];
   }
 
   Map<String, dynamic> toJson() {
@@ -36,7 +39,7 @@ class TeacherInformationObject {
     data['Password']=password;
     data['Teacher_Name']=teacher_Name;
     data['Phone_Number']=phone_Number;
-    data['Address ']=address;
+    data['Status ']=status;
     return data;
   }
 }

@@ -50,11 +50,11 @@ class _AddFacultyScreenState extends State<AddFacultyScreen> {
         );
       }
     } catch (error) {
-      // ScaffoldMessenger.of(context).showSnackBar(
-      //   SnackBar(
-      //     content: Text('Lỗi khi thêm. Vui lòng thử lại sau!!'),
-      //   ),
-      // );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Lỗi khi thêm. Vui lòng thử lại sau!!'),
+        ),
+      );
       print(error);
     }
 

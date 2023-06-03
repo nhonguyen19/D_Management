@@ -37,6 +37,7 @@ flutter:
     - assets/Logo_Khoa/
     - assets/Images_TOD/
     - assets/Gif_Status/
+    - assets/Icon/
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf

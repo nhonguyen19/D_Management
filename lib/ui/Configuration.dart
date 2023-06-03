@@ -114,15 +114,15 @@ class _ConfigurationState extends State<Configuration> {
       child: Column(
         children: [
           ListTile(
-            title: GetTypeOfDevice(id: _configurationDisplay[index].Device_Type_ID!,displayString: '',),
-            subtitle:GetConfigurationDetails(id: _configurationDisplay[index].Configuration_Detail_ID!,displayString: '',displaycolor: Colors.black,)
-            // trailing: Image.asset(
-            //   _deviceDisplay[index].Status == 1
-            //       ? 'assets/Gif_Status/automation.gif'
-            //       : 'assets/Gif_Status/repair.gif',
-            //   width: 30,
-            //   height: 30,
-            // ),
+            title: GetTypeOfDevice(id: _configurationDisplay[index].device_Type_ID!,displayString: '',displayColor: Colors.black,),
+            subtitle:GetConfigurationDetails(id: _configurationDisplay[index].configuration_Detail_ID!,displayString: '',displaycolor:Color.fromARGB(220, 243, 95, 95)),
+            trailing: Image.asset(
+              _configurationDisplay[index].status == 1
+                  ? 'assets/Gif_Status/connect_ic_2.gif'
+                  : 'assets/Gif_Status/repair.gif',
+              width: 30,
+              height: 30,
+            ),
           ),
         ],
       ),

@@ -57,10 +57,9 @@ class _DeviceDetail_State extends State<Device_Details> {
       statusTemp = 'Đang sửa chữa';
     }
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          ItemAppBar(),
+        backgroundColor: Colors.white,
+        body: ListView(children: [
+          ItemAppBar(deviceDetails: deviceDetail),
           Padding(
             padding: EdgeInsets.all(16),
             child: Image.network(
@@ -76,163 +75,163 @@ class _DeviceDetail_State extends State<Device_Details> {
               width: double.infinity,
               color: Color.fromARGB(255, 31, 60, 114),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 50,
-                          bottom: 20,
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 50,
+                            bottom: 20,
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                deviceDetail.Device_Name.toString(),
+                                style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
                         ),
-                        child: Row(
+                        SizedBox(height: 16),
+                        Row(
                           children: [
                             Text(
-                              deviceDetail.Device_Name.toString(),
+                              'Thông tin',
                               style: TextStyle(
-                                  fontSize: 24,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
                           ],
                         ),
-                      ),
-                      SizedBox(height: 16),
-                      Row(
-                        children: [
-                          Text(
-                            'Thông tin',
+                        SizedBox(height: 12),
+                        ListTile(
+                          leading: Image.asset('assets/Icon/room_white.png',
+                          height: 24,
+                          width: 24),   
+                          title: Text(
+                            'Phòng',
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 16),
-                      ListTile(
-                        leading: Icon(Icons.qr_code, color: Colors.white),
-                        title: Text(
-                          'Mã QR',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                          subtitle:GetRoom(id:deviceDetail.Room_ID!,displayColor:Colors.white)
                         ),
-                        subtitle: Text(
-                          deviceDetail.QRCode.toString(),
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.attach_money, color: Colors.white),
-                        title: Text(
-                          'Giá',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          '${deviceDetail.Price} VNĐ',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                      ListTile(
-                        leading:
-                            Icon(Icons.calendar_today, color: Colors.white),
-                        title: Text(
-                          'Hạn bảo hành',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          '${(deviceDetail.Warranty_Period.toString()).substring(0, deviceDetail.Warranty_Period.toString().length - 9)}',
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.description, color: Colors.white),
-                        title: Text(
-                          'Mô tả',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          deviceDetail.Description.toString(),
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.note, color: Colors.white),
-                        title: Text(
-                          'Ghi chú',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          deviceDetail.Note.toString(),
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.info, color: Colors.white),
-                        title: Text(
-                          'Trạng thái',
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        subtitle: Text(
-                          statusTemp,
-                          style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                       Row(
-                        children: [
-                          Text(
-                            'Cấu hình',
+                        ListTile(
+                          leading: Icon(Icons.qr_code, color: Colors.white),
+                          title: Text(
+                            'Mã QR',
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
-                        ],
-                      ),
-                       GetConfigurationSpecification(id: deviceDetail.id!, displayString:'')
-                    ],
-                  ),
-                ),
-              ),
+                          subtitle:Text(
+                            deviceDetail.QRCode.toString(),
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ), 
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.attach_money, color: Colors.white),
+                          title: Text(
+                            'Giá',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            '${deviceDetail.Price} VNĐ',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        ListTile(
+                          leading:
+                              Icon(Icons.calendar_today, color: Colors.white),
+                          title: Text(
+                            'Hạn bảo hành',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            '${(deviceDetail.Warranty_Period.toString()).substring(0, deviceDetail.Warranty_Period.toString().length - 9)}',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.description, color: Colors.white),
+                          title: Text(
+                            'Mô tả',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            deviceDetail.Description.toString(),
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.note, color: Colors.white),
+                          title: Text(
+                            'Ghi chú',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            deviceDetail.Note.toString(),
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.info, color: Colors.white),
+                          title: Text(
+                            'Trạng thái',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            statusTemp,
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
             ),
-          )
-        ],
-      ),
-    );
+          ),
+        ]));
   }
 }
